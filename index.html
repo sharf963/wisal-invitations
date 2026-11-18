@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>وِصال | دعوات الزفاف الإلكترونية</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,Arial;background:#faf7f2;color:#493b32}
+header{background:#fff;padding:20px;text-align:center;border-bottom:1px solid #eee}
+.logo{font-size:30px;color:#ad8657;font-weight:bold}
+header p{color:#88796c}
+main{max-width:900px;margin:auto;padding:22px}
+h2{color:#a77d4c}
+.hero{text-align:center;padding:35px 15px;background:#eee5d9;border-radius:18px}
+.hero h1{font-size:34px;color:#9b7548}
+.btn{border:0;padding:13px 22px;border-radius:9px;background:#a77d4c;color:white;font-size:16px;cursor:pointer}
+.card{background:white;border:1px solid #eee;border-radius:15px;padding:20px;margin:18px 0}
+input,select,textarea{width:100%;padding:13px;margin:8px 0 15px;border:1px solid #ddd;border-radius:8px;font-size:15px;background:#fff}
+label{font-weight:bold}
+.preview{text-align:center;background:#f3e9dc;padding:25px;border-radius:15px;border:1px solid #d7bd9a}
+.preview h2{font-size:28px}
+.preview .names{font-size:27px;color:#9b7548}
+.timer{font-size:24px;color:#9b7548;font-weight:bold;margin:15px}
+footer{text-align:center;padding:25px;color:#88796c}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">وِصال WISAL</div>
+<p>لحظات الحب تستحق دعوة لا تُنسى</p>
+</header>
+
+<main>
+<section class="hero">
+<h1>اصنع دعوتك بنفسك</h1>
+<p>دعوات زفاف إلكترونية بتصاميم أنيقة وروابط خاصة</p>
+<button class="btn" onclick="document.getElementById('editor').scrollIntoView()">ابدأ تصميم دعوتك</button>
+</section>
+
+<section class="card" id="editor">
+<h2>محرر الدعوة</h2>
+<label>اسم العريس</label>
+<input id="groom" placeholder="اسم العريس" oninput="update()">
+
+<label>اسم العروس</label>
+<input id="bride" placeholder="اسم العروس" oninput="update()">
+
+<label>موعد الزفاف</label>
+<input id="date" type="datetime-local" onchange="update()">
+
+<label>مكان الحفل</label>
+<input id="place" placeholder="اسم الصالة والمدينة" oninput="update()">
+
+<label>اختر التصميم</label>
+<select id="theme" onchange="update()">
+<option value="classic">التصميم الكلاسيكي</option>
+<option value="rose">التصميم الوردي</option>
+<option value="gold">التصميم الذهبي</option>
+</select>
+
+<label>رسالة الدعوة</label>
+<textarea id="message" rows="3" oninput="update()">بكل الحب والسرور ندعوكم لمشاركتنا فرحتنا</textarea>
+
+<label>صورة العروسين</label>
+<input id="photo" type="file" accept="image/*" onchange="loadPhoto(event)">
+
+<label>موسيقى الدعوة MP3</label>
+<input id="music" type="file" accept="audio/*" onchange="loadMusic(event)">
+
+<button class="btn" onclick="share()">إنشاء رابط الدعوة</button>
+</section>
+
+<section class="card">
+<h2>معاينة الدعوة</h2>
+<div class="preview" id="preview">
+<h2>دعوة زفاف</h2>
+<p class="names" id="names">العريس & العروس</p>
+<p id="msg">بكل الحب والسرور ندعوكم لمشاركتنا فرحتنا</p>
+<img id="photoView" style="display:none;width:100%;max-height:300px;object-fit:cover;border-radius:12px">
+<p id="dateView">موعد الزفاف</p>
+<div class="timer" id="timer">بانتظار تحديد الموعد</div>
+<p id="placeView">مكان الحفل</p>
+</div>
+<audio id="player" controls style="display:none;width:100%;margin-top:15px"></audio>
+</section>
+
+<section class="card">
+<h2>تأكيد الحضور</h2>
+<input id="guest" placeholder="اسم الضيف">
+<select id="attendance">
+<option value="نعم">سأحضر بإذن الله</option>
+<option value="لا">أعتذر عن الحضور</option>
+</select>
+<button class="btn" onclick="rsvp()">تأكيد الرد</button>
+<p id="reply"></p>
+</section>
+</main>
+
+<footer>© 2026 WISAL - جميع الحقوق محفوظة</footer>
+
+<script>
+function update(){
+let g=document.getElementById('groom').value||'العريس';
+let b=document.getElementById('bride').value||'العروس';
+document.getElementById('names').textContent=g+' & '+b;
+document.getElementById('msg').textContent=document.getElementById('message').value;
+document.getElementById('placeView').textContent=document.getElementById('place').value||'مكان الحفل';
+let d=document.getElementById('date').value;
+document.getElementById('dateView').textContent=d?new Date(d).toLocaleString('ar'): 'موعد الزفاف';
+let t=document.getElementById('theme').value;
+let colors={classic:['#f3e9dc','#9b7548'],rose:['#f8e5e9','#a84f70'],gold:['#f5edcf','#927126']};
+let p=document.getElementById('preview');
+p.style.background=colors[t][0];
+p.style.borderColor=colors[t][1];
+p.style.color=colors[t][1];
+}
+function loadPhoto(e){
+let f=e.target.files[0];if(!f)return;
+let img=document.getElementById('photoView');
+img.src=URL.createObjectURL(f);img.style.display='block';
+}
+function loadMusic(e){
+let f=e.target.files[0];if(!f)return;
+let a=document.getElementById('player');
+a.src=URL.createObjectURL(f);a.style.display='block';
+}
+function rsvp(){
+let n=document.getElementById('guest').value.trim();
+if(!n){alert('اكتب اسم الضيف');return;}
+document.getElementById('reply').textContent='شكراً '+n+'، تم تسجيل ردك في هذه المعاينة.';
+}
+function share(){
+update();
+let data={
+g:document.getElementById('groom').value,
+b:document.getElementById('bride').value,
+d:document.getElementById('date').value,
+p:document.getElementById('place').value,
+m:document.getElementById('message').value,
+t:document.getElementById('theme').value
+};
+let url=location.origin+location.pathname+'?invitation='+encodeURIComponent(btoa(unescape(encodeURIComponent(JSON.stringify(data)))));
+if(navigator.clipboard){navigator.clipboard.writeText(url).then(()=>alert('تم نسخ رابط الدعوة التجريبي'));}
+else{prompt('انسخ رابط الدعوة',url);}
+}
+function countdown(){
+let d=document.getElementById('date').value;
+if(!d){document.getElementById('timer').textContent='بانتظار تحديد الموعد';return;}
+let diff=new Date(d)-new Date();
+if(diff<=0){document.getElementById('timer').textContent='ألف مبروك!';return;}
+let days=Math.floor(diff/86400000);
+let hours=Math.floor(diff%86400000/3600000);
+let mins=Math.floor(diff%3600000/60000);
+document.getElementById('timer').textContent=days+' يوم | '+hours+' ساعة | '+mins+' دقيقة';
+}
+setInterval(countdown,1000);
+</script>
+</body>
+</html>
