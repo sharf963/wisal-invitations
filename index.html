@@ -3,1610 +3,1216 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#24191e">
-<title>وِصال WISAL | دعوات إلكترونية فاخرة</title>
-<meta name="description" content="وِصال - صمم دعوة خطوبتك أو زفافك بأسلوب فاخر وشارك فرحتك مع ضيوفك.">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#151b18">
+<title>وِصال | دعوات استثنائية</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#faf8f4;
-  --surface:#fff;
-  --ink:#30242a;
-  --muted:#8c817b;
-  --wine:#512c39;
-  --wine2:#321d27;
-  --gold:#b99862;
-  --gold-light:#e7d5b1;
-  --line:#eee7dd;
-  --radius:18px;
-  --shadow:0 15px 45px #39251a0d;
+  --ink:#17201b;
+  --forest:#20382e;
+  --forest2:#2e4b3d;
+  --cream:#f4f0e7;
+  --paper:#fbf9f4;
+  --gold:#b69a68;
+  --gold-light:#d7c49b;
+  --muted:#8b8d82;
+  --line:rgba(182,154,104,.35);
+  --serif:"Playfair Display",serif;
+  --arabic:"Amiri",serif;
+  --sans:"Cairo",sans-serif;
 }
-
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  background:var(--bg);
+  background:var(--cream);
   color:var(--ink);
-  font-family:'Cairo',sans-serif;
+  font-family:var(--sans);
 }
 button,input,textarea,select{font:inherit}
 button{cursor:pointer}
-a{color:inherit;text-decoration:none}
-img{max-width:100%}
+a{color:inherit}
 .hidden{display:none!important}
-.container{width:min(1160px,calc(100% - 36px));margin:auto}
-
-/* NAVIGATION */
-
-header{
-  background:#fffdf9ee;
-  border-bottom:1px solid var(--line);
-  position:sticky;
-  top:0;
-  z-index:50;
-  backdrop-filter:blur(15px);
-}
-.nav{
-  min-height:75px;
+.topbar{
+  min-height:76px;
+  padding:15px 7%;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
+  border-bottom:1px solid rgba(23,32,27,.1);
+  background:rgba(251,249,244,.94);
 }
-.logo{
-  font-family:'Amiri',serif;
-  color:var(--wine);
-  font-size:36px;
-  line-height:1;
+.brand{
+  font-family:var(--serif);
+  font-size:29px;
+  letter-spacing:4px;
+  font-weight:600;
 }
-.logo small{
+.brand small{
   display:block;
-  font:10px Cairo,sans-serif;
+  font:10px var(--sans);
   letter-spacing:5px;
-  text-align:center;
   color:var(--gold);
-  direction:ltr;
+  text-align:center;
 }
-.nav-links{
+.top-link{
+  text-decoration:none;
+  font-size:12px;
+  letter-spacing:1px;
+  color:#657067;
+}
+.hero{
+  min-height:470px;
+  padding:85px 20px 75px;
+  text-align:center;
+  background:
+   radial-gradient(ellipse at 50% 0%,rgba(182,154,104,.13),transparent 55%),
+   var(--cream);
   display:flex;
   align-items:center;
-  gap:25px;
-  font-size:13px;
-  color:#695e58;
-}
-.nav-links a:hover{color:var(--gold)}
-.nav-actions{display:flex;gap:9px;align-items:center}
-.btn{
-  display:inline-flex;
   justify-content:center;
-  align-items:center;
-  gap:8px;
-  padding:12px 20px;
-  border-radius:10px;
-  border:1px solid transparent;
-  font-weight:700;
-  font-size:13px;
-  transition:.2s;
 }
-.btn-primary{
-  color:#fff;
-  background:var(--wine);
-}
-.btn-primary:hover{background:#704052;transform:translateY(-2px)}
-.btn-outline{
-  color:var(--wine);
-  border-color:#d8c8b0;
-  background:transparent;
-}
-.btn-light{
-  color:var(--wine);
-  background:#f3ecdf;
-}
-.btn-block{width:100%}
-
-/* HERO */
-
-.hero{
-  padding:85px 0 75px;
-  background:
-    radial-gradient(ellipse at 75% 15%,#eee1d3 0,transparent 45%),
-    linear-gradient(120deg,#faf7f1,#f1e9dd);
-  overflow:hidden;
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:50px;
-  align-items:center;
-}
+.hero-inner{max-width:760px}
 .eyebrow{
-  color:#a18559;
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:2px;
+  font-size:10px;
+  letter-spacing:4px;
+  color:#927b53;
+  text-transform:uppercase;
 }
 .hero h1{
-  font-family:'Amiri',serif;
-  font-size:clamp(42px,6vw,68px);
-  line-height:1.35;
+  font:clamp(43px,8vw,82px)/1.2 var(--arabic);
   font-weight:400;
-  color:#3e2731;
-  margin:17px 0;
+  margin:24px 0 14px;
 }
-.hero h1 span{color:#a47f4c}
+.hero h1 span{color:var(--gold)}
 .hero p{
-  color:#7c7068;
-  font-size:15px;
-  line-height:2.1;
-  max-width:520px;
-}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
-.hero-points{
-  display:flex;
-  flex-wrap:wrap;
-  gap:17px;
-  margin-top:25px;
-  font-size:11px;
-  color:#82776d;
-}
-.hero-art{
-  min-height:430px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:relative;
-}
-.hero-card{
-  width:min(330px,85%);
-  height:405px;
-  background:linear-gradient(145deg,#633b49,#2d1d25);
-  border:1px solid #c5a66f;
-  box-shadow:0 30px 70px #3d273433;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  align-items:center;
-  text-align:center;
-  padding:35px 22px;
-  color:#f8e9cb;
-  position:relative;
-  transform:rotate(-3deg);
-}
-.hero-card:before{
-  content:"";
-  position:absolute;
-  inset:11px;
-  border:1px solid #c4a56d;
-}
-.hero-card-top,.hero-card-bottom{position:relative;z-index:1}
-.hero-card-brand{
-  font:12px serif;
-  letter-spacing:6px;
-  direction:ltr;
-  color:#d7bd89;
-}
-.hero-card h2{
-  font:36px Amiri,serif;
-  margin:15px 0;
-}
-.hero-monogram{
-  width:125px;height:125px;
-  border:1px solid #d9bd84;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  font:37px Amiri,serif;
-  color:#e9d3a4;
-  box-shadow:0 0 0 7px #ffffff08,0 0 0 8px #c3a36c;
-}
-.hero-card-bottom{font:20px Amiri,serif}
-
-/* SECTIONS */
-
-.section{padding:75px 0}
-.section-heading{text-align:center;margin-bottom:35px}
-.section-heading .eyebrow{display:block}
-.section-heading h2{
-  font:38px Amiri,serif;
-  color:#432b35;
-  margin:9px 0;
-}
-.section-heading p{
-  color:var(--muted);
+  color:#74796f;
   font-size:13px;
-  line-height:2;
-  margin:auto;
-  max-width:600px;
+  line-height:2.2;
+  max-width:530px;
+  margin:0 auto 30px;
 }
-
-/* OCCASION SELECTOR */
-
-.occasion-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-  max-width:800px;
-  margin:auto;
-}
-.occasion-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:26px;
-  text-align:center;
-  transition:.25s;
-  cursor:pointer;
-}
-.occasion-card:hover{
-  border-color:var(--gold);
-  transform:translateY(-5px);
-  box-shadow:var(--shadow);
-}
-.occasion-card.selected{
-  border:2px solid var(--gold);
-  background:#fffaf1;
-}
-.occasion-icon{font-size:36px}
-.occasion-card h3{
-  font:28px Amiri,serif;
-  margin:8px 0;
-  color:var(--wine);
-}
-.occasion-card p{
+.primary-btn,.dark-btn,.outline-btn{
+  border:0;
+  padding:14px 27px;
+  transition:.3s;
   font-size:12px;
-  color:var(--muted);
-  line-height:1.9;
+  letter-spacing:.5px;
 }
-
-/* DESIGNS */
-
-.design-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:17px;
+.primary-btn{
+  background:var(--forest);
+  color:white;
 }
-.design-card{
-  background:#fff;
+.primary-btn:hover,.dark-btn:hover{
+  background:#385744;
+  transform:translateY(-2px);
+}
+.dark-btn{
+  background:var(--ink);
+  color:white;
+}
+.outline-btn{
+  background:transparent;
   border:1px solid var(--line);
-  border-radius:15px;
-  overflow:hidden;
-  cursor:pointer;
-  transition:.25s;
+  color:var(--ink);
 }
-.design-card:hover{
-  transform:translateY(-5px);
-  box-shadow:var(--shadow);
+.outline-btn:hover{background:rgba(182,154,104,.1)}
+.section{
+  padding:70px 7%;
+  max-width:1200px;
+  margin:auto;
 }
-.design-card.selected{border:2px solid var(--gold)}
-.design-art{
-  min-height:210px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
+.section-head{text-align:center;margin-bottom:38px}
+.section-head small{
+  color:var(--gold);
+  letter-spacing:3px;
+  font-size:10px;
 }
-.design-paper{
-  width:145px;
-  height:175px;
-  border:1px solid #c7a66d;
-  outline:4px solid #ffffff22;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  box-shadow:0 12px 25px #0003;
-  padding:12px;
+.section-head h2{
+  font:36px var(--arabic);
+  font-weight:400;
+  margin:10px 0;
 }
-.design-paper small{font:9px serif;letter-spacing:3px;direction:ltr}
-.design-paper strong{font:25px Amiri,serif;margin:12px 0}
-.design-paper span{font:12px Amiri,serif}
-.design-info{padding:14px}
-.design-info strong{font-size:13px}
-.design-info p{font-size:11px;color:var(--muted);margin:4px 0 0}
-.design-art.wine{background:#3b2530}
-.design-art.cream{background:#e9dfcc}
-.design-art.rose{background:#ead4d4}
-.design-art.navy{background:#1e3142}
-.design-art.green{background:#314239}
-.design-art.lavender{background:#d9d0e2}
-.design-art.wine .design-paper{background:#512d3a;color:#f1dfbb}
-.design-art.cream .design-paper{background:#fffaf0;color:#836a45}
-.design-art.rose .design-paper{background:#fff5f4;color:#a46f78}
-.design-art.navy .design-paper{background:#263a4b;color:#e6d2a5}
-.design-art.green .design-paper{background:#35483c;color:#e5d4ae}
-.design-art.lavender .design-paper{background:#faf6ff;color:#776487}
-
-/* HOW IT WORKS */
-
-.steps{
+.section-head p{font-size:12px;color:#85877e}
+.editor-layout{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-.step{
-  background:#fff;
-  padding:24px 18px;
-  border:1px solid var(--line);
-  border-radius:15px;
-}
-.step-number{
-  color:#b39460;
-  font:30px Amiri,serif;
-}
-.step h3{font-size:15px;color:var(--wine)}
-.step p{font-size:12px;color:var(--muted);line-height:2}
-
-/* FEATURES */
-
-.features{
-  background:#30212a;
-  color:#fff;
-}
-.features .section-heading h2{color:#f1e4cb}
-.features .section-heading p{color:#c3b4aa}
-.feature-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-}
-.feature{
-  padding:20px;
-  border:1px solid #ffffff20;
-  border-radius:13px;
-}
-.feature span{font-size:25px}
-.feature h3{font-size:14px;color:#e7d0a3}
-.feature p{font-size:12px;color:#c4b7b0;line-height:1.9}
-
-/* BUILDER */
-
-.builder-wrap{
-  background:#f2ece2;
-}
-.builder{
-  display:grid;
-  grid-template-columns:1fr .9fr;
-  gap:22px;
+  grid-template-columns:minmax(0,1fr) minmax(300px,.85fr);
+  gap:34px;
   align-items:start;
 }
-.builder-form,.preview-box{
-  background:#fff;
-  padding:24px;
-  border:1px solid var(--line);
-  border-radius:17px;
-  box-shadow:var(--shadow);
+.panel{
+  background:var(--paper);
+  border:1px solid rgba(23,32,27,.09);
+  padding:28px;
 }
-.builder-form h3{
-  font:26px Amiri,serif;
-  color:var(--wine);
-  margin:0 0 17px;
+.panel-title{
+  font:25px var(--arabic);
+  margin:0 0 8px;
+}
+.panel-sub{
+  color:#898b82;
+  font-size:11px;
+  margin:0 0 25px;
 }
 .form-section{
-  font-size:13px;
-  font-weight:800;
-  color:#a17e4b;
-  padding:12px 0 7px;
-  border-bottom:1px solid var(--line);
-  margin-top:15px;
+  border-top:1px solid rgba(23,32,27,.09);
+  padding-top:22px;
+  margin-top:22px;
 }
-.field{margin:12px 0}
+.form-section h3{
+  font-size:12px;
+  font-weight:600;
+  margin:0 0 17px;
+}
+.field{margin-bottom:15px}
 .field label{
   display:block;
-  font-size:12px;
-  color:#766c64;
-  margin-bottom:6px;
+  font-size:11px;
+  color:#656e64;
+  margin-bottom:7px;
 }
-.field input,.field select,.field textarea{
+.field input,.field textarea,.field select{
   width:100%;
-  padding:11px;
-  border:1px solid #e5ded4;
-  border-radius:9px;
-  background:#fffdfa;
+  border:1px solid #deddd4;
+  background:#fffefa;
+  padding:12px 13px;
+  color:var(--ink);
   outline:none;
-  font-size:13px;
-}
-.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold)}
-.field textarea{min-height:75px;resize:vertical}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.hint{font-size:11px;color:#9b9085;line-height:1.8}
-.preview-box{
-  position:sticky;
-  top:95px;
-  text-align:center;
-}
-.preview-box h3{font:24px Amiri,serif;color:var(--wine)}
-.preview-cover{
-  min-height:390px;
-  background:linear-gradient(145deg,#633b49,#2b1a22);
-  color:#f5e5c5;
-  border:1px solid var(--gold);
-  padding:25px 15px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  align-items:center;
-}
-.preview-cover .monogram{
-  width:90px;height:90px;border:1px solid var(--gold);
-  border-radius:50%;display:grid;place-items:center;
-  font:29px Amiri,serif;
-}
-.preview-cover h4{font:28px Amiri,serif;margin:10px}
-.preview-cover p{font:16px Amiri,serif}
-.preview-cover small{font-size:10px;letter-spacing:4px;direction:ltr}
-
-/* RESULT */
-
-.link-result{
-  display:none;
-  background:#f7f3eb;
-  padding:16px;
-  border:1px solid #e5d9c6;
-  border-radius:12px;
-  margin-top:16px;
-}
-.link-result p{
-  direction:ltr;
-  text-align:left;
-  overflow-wrap:anywhere;
-  color:#80633e;
+  border-radius:0;
   font-size:12px;
 }
-
-/* INVITATION VIEW */
-
-.invitation-page{
-  display:none;
-  min-height:100vh;
-  align-items:center;
-  justify-content:center;
-  padding:25px 14px;
-  background:
-    radial-gradient(ellipse at top,#79545a,#30212a 65%,#17151a);
+.field input:focus,.field textarea:focus,.field select:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 2px rgba(182,154,104,.1);
 }
-.invitation-shell{width:min(100%,450px);margin:auto}
-.invitation-cover{
+.field textarea{min-height:85px;resize:vertical}
+.field-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.type-switch{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+.type-option{
+  border:1px solid #deddd4;
+  padding:13px 8px;
+  text-align:center;
+  font-size:12px;
+  background:white;
+  color:#72786f;
+  transition:.2s;
+}
+.type-option.active{
+  border-color:var(--gold);
+  background:#f3eee3;
+  color:var(--forest);
+}
+.optional{
+  font-size:9px;
+  color:#a18a61;
+  margin-right:5px;
+}
+.note-hint{
+  font-size:10px;
+  color:#99998f;
+  margin-top:5px;
+  line-height:1.8;
+}
+.preview-wrap{
+  position:sticky;
+  top:20px;
+}
+.preview-label{
+  font-size:10px;
+  color:#8c8d83;
+  text-align:center;
+  margin-bottom:12px;
+  letter-spacing:2px;
+}
+.invite-card{
+  background:var(--forest);
+  color:var(--cream);
+  min-height:570px;
   position:relative;
-  min-height:660px;
-  padding:38px 20px 28px;
-  background:linear-gradient(145deg,#633b49,#2d1c25);
-  border:1px solid var(--gold);
-  outline:5px solid #261820;
-  box-shadow:0 25px 70px #0008;
-  color:#f5e6c8;
+  overflow:hidden;
+  padding:34px 25px;
+  text-align:center;
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
-  align-items:center;
-  text-align:center;
-  overflow:hidden;
+  justify-content:center;
+  border:8px solid var(--paper);
+  outline:1px solid var(--gold);
+  outline-offset:-13px;
 }
-.invitation-cover:before{
+.invite-card:before,.invite-card:after{
   content:"";
   position:absolute;
-  inset:11px;
-  border:1px solid #c5a56e;
+  width:180px;height:180px;
+  border:1px solid rgba(215,196,155,.22);
+  border-radius:50%;
+}
+.invite-card:before{top:-100px;right:-75px}
+.invite-card:after{bottom:-100px;left:-75px}
+.card-top{
+  color:var(--gold-light);
+  font-size:9px;
+  letter-spacing:4px;
+  margin-bottom:28px;
+}
+.card-monogram{
+  width:70px;height:70px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  margin:0 auto 20px;
+  display:flex;align-items:center;justify-content:center;
+  font:28px var(--serif);
+  color:var(--gold-light);
+}
+.card-intro{
+  font:20px var(--arabic);
+  color:#e7dfcf;
+}
+.card-names{
+  font:clamp(30px,5vw,42px)/1.5 var(--arabic);
+  margin:14px 0;
+  color:#fffaf0;
+}
+.card-and{
+  color:var(--gold-light);
+  font:italic 17px var(--serif);
+}
+.card-rule{
+  width:55px;height:1px;
+  background:var(--gold);
+  margin:22px auto;
+}
+.card-message{
+  font:17px/1.9 var(--arabic);
+  color:#e7dfcf;
+  white-space:pre-wrap;
+}
+.card-date{
+  font:17px var(--arabic);
+  color:var(--gold-light);
+  margin-top:20px;
+}
+.card-place{
+  font-size:10px;
+  color:#d2d0c4;
+  margin-top:9px;
+}
+.preview-actions{
+  display:flex;
+  gap:8px;
+  margin-top:18px;
+}
+.preview-actions button{flex:1}
+.features{
+  background:#e9e4d8;
+  padding:55px 7%;
+}
+.feature-grid{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+.feature{text-align:center;padding:15px}
+.feature .num{
+  color:var(--gold);
+  font:26px var(--serif);
+}
+.feature h3{font:20px var(--arabic);font-weight:400}
+.feature p{font-size:11px;color:#777c72;line-height:2}
+.footer{
+  background:var(--ink);
+  color:#c9c7bb;
+  text-align:center;
+  padding:35px 15px;
+  font-size:10px;
+}
+.footer strong{
+  display:block;
+  font:25px var(--serif);
+  letter-spacing:4px;
+  color:var(--gold-light);
+  margin-bottom:8px;
+}
+
+/* GUEST INVITATION */
+.guest-page{
+  min-height:100vh;
+  background:#17221c;
+  color:#f5f0e6;
+  overflow:hidden;
+}
+.guest-cover{
+  min-height:100vh;
+  padding:35px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    radial-gradient(ellipse at 50% 45%,rgba(182,154,104,.16),transparent 55%),
+    #17221c;
+}
+.cover-content{width:min(100%,520px)}
+.cover-brand{
+  font:24px var(--serif);
+  letter-spacing:5px;
+  color:var(--gold-light);
+}
+.cover-kicker{
+  font-size:9px;
+  letter-spacing:4px;
+  color:#b7a47b;
+  margin-top:45px;
+}
+.cover-guest{
+  font:clamp(30px,7vw,45px) var(--arabic);
+  margin:18px 0 8px;
+}
+.cover-desc{
+  font:17px/2 var(--arabic);
+  color:#c9c5b9;
+}
+.cover-from{
+  font:19px/2 var(--arabic);
+  color:#e5d7b8;
+  margin:18px auto 30px;
+}
+.seal{
+  width:112px;height:112px;
+  margin:28px auto 15px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(182,154,104,.07);
+  color:var(--gold-light);
+  font:34px var(--serif);
+  position:relative;
+  transition:.4s;
+}
+.seal:before{
+  content:"";
+  position:absolute;
+  inset:7px;
+  border:1px solid rgba(215,196,155,.4);
+  border-radius:50%;
+}
+.seal-button{
+  border:0;
+  background:transparent;
+  color:inherit;
+  display:block;
+  margin:auto;
+}
+.seal-button:hover .seal{
+  transform:rotate(-12deg) scale(1.06);
+  background:rgba(182,154,104,.17);
+}
+.open-hint{
+  font-size:10px;
+  color:#b5aa91;
+  letter-spacing:2px;
+  margin-top:15px;
+}
+.guest-invitation{
+  display:none;
+  background:#f5f1e8;
+  color:var(--ink);
+  min-height:100vh;
+  animation:reveal .9s ease both;
+}
+.guest-invitation.visible{display:block}
+@keyframes reveal{
+  from{opacity:0;transform:translateY(25px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.invite-hero{
+  min-height:560px;
+  padding:80px 20px;
+  background:var(--forest);
+  color:#f5f0e6;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+.invite-hero:before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(215,196,155,.3);
   pointer-events:none;
 }
-.invitation-top{position:relative;z-index:2;width:100%}
-.invitation-brand{font:12px serif;letter-spacing:6px;direction:ltr;color:#d9bd83}
-.invitation-bismillah{font:20px Amiri,serif;margin:20px 0;color:#e4d0a7}
-.invitation-cover .guest-label{font-size:11px;color:#cdb98f}
-.invitation-cover .guest-name{font:34px Amiri,serif;margin:8px 0;color:#fff0d1}
-.invitation-cover .received{font:19px Amiri,serif;line-height:1.9;color:#e8d8b7}
-.envelope{
-  width:min(100%,310px);
-  height:180px;
-  position:relative;
-  cursor:pointer;
-  filter:drop-shadow(0 15px 16px #0007);
-  transition:.3s;
+.invite-hero .eyebrow{color:var(--gold-light)}
+.invite-hero h1{
+  font:clamp(42px,9vw,78px)/1.4 var(--arabic);
+  font-weight:400;
+  margin:25px 0 8px;
 }
-.envelope:hover{transform:translateY(-5px)}
-.env-back{position:absolute;inset:0;background:#d5c29e}
-.env-paper{position:absolute;left:9%;top:-12%;width:82%;height:90%;background:#fff9e9}
-.env-left{position:absolute;inset:0;background:#e8d9bc;clip-path:polygon(0 0,50% 55%,0 100%)}
-.env-right{position:absolute;inset:0;background:#f0e4cb;clip-path:polygon(100% 0,50% 55%,100% 100%)}
-.env-bottom{position:absolute;inset:0;background:#d6c29c;clip-path:polygon(0 100%,50% 48%,100% 100%)}
-.env-flap{position:absolute;inset:0;background:#f4e9d2;clip-path:polygon(0 0,100% 0,50% 58%)}
-.seal{
-  position:absolute;z-index:5;
-  width:78px;height:78px;left:50%;top:50%;
-  transform:translate(-50%,-35%);
-  border-radius:50%;
-  display:grid;place-items:center;
-  background:radial-gradient(circle at 35% 30%,#f0d99e,#bd9550 55%,#805b2c);
-  border:3px double #f2dba7;
-  box-shadow:0 0 0 4px #98703b,0 5px 12px #0006;
-  font:29px Amiri,serif;color:#fff2d2;direction:ltr;
+.invite-hero .amp{
+  color:var(--gold-light);
+  font:italic 24px var(--serif);
 }
-.invitation-hint{font-size:12px;color:#d7c093;margin-top:25px}
-.invitation-footer{font:20px Amiri,serif;color:#d7c093;position:relative;z-index:2}
-.invitation-inside{
-  display:none;
-  background:#fffaf0;
-  color:#57483b;
-  padding:35px 22px;
-  border:1px solid var(--gold);
-  outline:5px solid #261820;
+.invite-hero .subtitle{
+  font:19px var(--arabic);
+  color:#e0d8c7;
+  margin-top:25px;
+}
+.guest-section{
+  max-width:760px;
+  margin:auto;
+  padding:65px 22px;
   text-align:center;
-  animation:fade .6s ease;
 }
-@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
-.invitation-inside h1{font:42px Amiri,serif;color:#997447;margin:12px}
-.inside-couple{font:29px Amiri,serif;color:#8e6d42;line-height:1.8;margin:20px 0}
-.inside-message{font:19px Amiri,serif;line-height:2;color:#76644f;white-space:pre-line}
-.details{
-  background:#f3ebdd;
-  border:1px solid #e5d6ba;
+.guest-section h2{
+  font:31px var(--arabic);
+  font-weight:400;
+  margin:0 0 14px;
+}
+.guest-section p{
+  font:18px/2.1 var(--arabic);
+  color:#73796e;
+  white-space:pre-wrap;
+}
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  max-width:570px;
+  margin:35px auto 10px;
+  direction:ltr;
+}
+.time-unit{
+  padding:18px 5px;
+  background:#ebe5d8;
+  border:1px solid rgba(182,154,104,.3);
+}
+.time-unit strong{
+  display:block;
+  font:clamp(25px,6vw,38px) var(--serif);
+  color:var(--forest);
+}
+.time-unit span{
+  display:block;
+  font-size:9px;
+  color:#8a806d;
+  margin-top:5px;
+  letter-spacing:1px;
+}
+.event-details{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  max-width:620px;
+  margin:35px auto;
+}
+.detail{
+  padding:20px 10px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.detail small{
+  display:block;
+  color:#9b845a;
+  font-size:9px;
+  letter-spacing:2px;
+  margin-bottom:8px;
+}
+.detail strong{
+  font:20px var(--arabic);
+  font-weight:400;
+}
+.note-box{
+  margin:30px auto;
+  padding:23px;
+  max-width:600px;
+  background:#ebe5d8;
+  border-right:2px solid var(--gold);
   text-align:right;
-  padding:16px;
-  margin:20px 0;
-  line-height:2.4;
-  font-size:13px;
 }
-.details strong{color:#967545}
-.rsvp{
-  display:inline-block;
-  background:#8d6b3d;
+.note-box small{
+  color:#9b845a;
+  letter-spacing:2px;
+  font-size:9px;
+}
+.note-box p{margin:10px 0 0;font-size:17px}
+.action-row{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin:30px auto;
+}
+.action-row a,.action-row button{
+  text-decoration:none;
+  padding:13px 20px;
+  border:1px solid var(--forest);
+  background:var(--forest);
+  color:white;
+  font-size:11px;
+}
+.action-row .secondary{
+  background:transparent;
+  color:var(--forest);
+}
+.rsvp-box{
+  background:#eae4d7;
+  padding:35px 20px;
+  margin-top:45px;
+}
+.rsvp-box h3{
+  font:26px var(--arabic);
+  font-weight:400;
+}
+.rsvp-box p{font-size:12px}
+.rsvp-buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
+.rsvp-buttons button{
+  border:1px solid var(--forest);
+  background:var(--forest);
   color:white;
   padding:12px 20px;
-  border-radius:9px;
-  margin:12px 0;
-  font-size:13px;
+  font-size:11px;
 }
-.back{
-  border:0;background:#eee5d5;color:#705a3b;
-  border-radius:9px;padding:10px 18px;
+.rsvp-buttons button:last-child{
+  background:transparent;color:var(--forest);
 }
-.opening .env-flap{transform:rotateX(180deg);transform-origin:top;transition:.7s}
-.opening .seal{opacity:0;transition:.4s}
-.opening{animation:fade .8s ease}
-
-/* FOOTER */
-
-footer{
-  background:#21171c;
-  color:#c9bba9;
-  padding:40px 0;
+.guest-footer{
   text-align:center;
+  padding:35px;
+  background:var(--ink);
+  color:#d5c9ae;
+  font:23px var(--serif);
+  letter-spacing:4px;
 }
-footer .logo{color:#ead7b1}
-footer p{font-size:11px;color:#a99a8a;line-height:2}
-
-/* MOBILE */
-
-@media(max-width:850px){
-  .hero-grid{grid-template-columns:1fr;text-align:center}
-  .hero p{margin:auto}
-  .hero-actions,.hero-points{justify-content:center}
-  .hero-art{min-height:350px}
-  .design-grid{grid-template-columns:repeat(2,1fr)}
-  .steps{grid-template-columns:repeat(2,1fr)}
-  .builder{grid-template-columns:1fr}
-  .preview-box{position:static}
+.toast{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translate(-50%,20px);
+  background:#17221c;
+  color:white;
+  padding:12px 20px;
+  font-size:11px;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+  z-index:100;
 }
-@media(max-width:600px){
-  .nav{min-height:65px}
-  .nav-links{display:none}
-  .logo{font-size:31px}
-  .hero{padding:55px 0}
-  .hero-art{min-height:330px}
-  .hero-card{height:320px;width:250px}
-  .hero-card h2{font-size:30px}
-  .hero-monogram{width:100px;height:100px}
-  .section{padding:55px 0}
-  .section-heading h2{font-size:31px}
-  .occasion-grid{gap:10px}
-  .occasion-card{padding:18px 10px}
-  .occasion-card h3{font-size:23px}
-  .feature-grid{grid-template-columns:1fr 1fr}
-  .two-col{grid-template-columns:1fr}
-  .invitation-cover{min-height:620px;padding:35px 17px}
-}
-@media(max-width:370px){
-  .design-grid{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:800px){
+  .editor-layout{grid-template-columns:1fr}
+  .preview-wrap{position:static;max-width:480px;margin:auto;width:100%}
+  .section{padding:45px 5%}
   .feature-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .topbar{padding:13px 5%}
+  .brand{font-size:24px}
+  .panel{padding:20px 15px}
+  .field-grid{grid-template-columns:1fr}
+  .invite-card{min-height:510px}
+  .countdown{gap:5px}
+  .time-unit{padding:13px 2px}
+  .time-unit span{font-size:8px}
+  .event-details{gap:8px}
+  .detail strong{font-size:17px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<div id="editor">
+  <header class="topbar">
+    <div class="brand">WISAL<small>وِصــال</small></div>
+    <a href="#create" class="top-link">اصنع دعوتك</a>
+  </header>
 
-<header id="siteHeader">
-  <div class="container nav">
-    <a href="#" class="logo">وِصال<small>W I S A L</small></a>
-
-    <nav class="nav-links">
-      <a href="#designs">التصاميم</a>
-      <a href="#how">كيف تعمل</a>
-      <a href="#features">المميزات</a>
-      <a href="#builder">صمم دعوتك</a>
-    </nav>
-
-    <div class="nav-actions">
-      <button class="btn btn-primary" onclick="goBuilder()">ابدأ التصميم</button>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">A NEW CHAPTER BEGINS</div>
+      <h1>لحظاتٌ تستحق <span>أن تُروى</span></h1>
+      <p>ليست مجرد دعوة، بل بداية حكاية جميلة. صمّم دعوتك بأسلوب يليق بمناسبتك، وشاركها مع من تحب.</p>
+      <button class="primary-btn" onclick="document.getElementById('create').scrollIntoView({behavior:'smooth'})">ابدأ تصميم دعوتك</button>
     </div>
-  </div>
-</header>
+  </section>
 
-<!-- HOME -->
-
-<main id="home">
-
-<section class="hero">
-  <div class="container hero-grid">
-
-    <div>
-      <span class="eyebrow">لحظاتكم الجميلة تستحق التميّز</span>
-
-      <h1>
-        لكل فرحة حكاية،<br>
-        ولكل حكاية <span>وِصال</span>
-      </h1>
-
-      <p>
-        صمّم دعوة خطوبتك أو زفافك بأسلوب أنيق،
-        خصّصها باسم كل ضيف، وشارك أجمل لحظات حياتك
-        برابط واحد يليق بمناسبتك.
-      </p>
-
-      <div class="hero-actions">
-        <button class="btn btn-primary" onclick="goBuilder()">صمّم دعوتك الآن</button>
-        <a class="btn btn-outline" href="#designs">اكتشف التصاميم</a>
-      </div>
-
-      <div class="hero-points">
-        <span>✦ تصاميم راقية</span>
-        <span>✦ دعوة باسم الضيف</span>
-        <span>✦ تعمل على الهاتف</span>
-      </div>
+  <section class="section" id="create">
+    <div class="section-head">
+      <small>THE INVITATION STUDIO</small>
+      <h2>اصنع لحظتك الخاصة</h2>
+      <p>أدخل التفاصيل وشاهد دعوتك تتشكل مباشرة أمامك</p>
     </div>
 
-    <div class="hero-art">
-      <div class="hero-card">
-        <div class="hero-card-top">
-          <div class="hero-card-brand">W I S A L</div>
-          <p>بكل الحب والسرور</p>
-          <h2>دعوة خاصة</h2>
-        </div>
-        <div class="hero-monogram">أ & ل</div>
-        <div class="hero-card-bottom">فرحتنا تكتمل بحضوركم</div>
-      </div>
-    </div>
+    <div class="editor-layout">
+      <div class="panel">
+        <h2 class="panel-title">تفاصيل الدعوة</h2>
+        <p class="panel-sub">املأ البيانات المطلوبة، ويمكنك تعديلها في أي وقت قبل إنشاء الرابط.</p>
 
-  </div>
-</section>
-
-<!-- OCCASION -->
-
-<section class="section" id="occasion">
-  <div class="container">
-    <div class="section-heading">
-      <span class="eyebrow">ابدأ من هنا</span>
-      <h2>ما هي مناسبتكم؟</h2>
-      <p>اختر نوع المناسبة لتظهر لك النصوص والتصاميم المناسبة لها.</p>
-    </div>
-
-    <div class="occasion-grid">
-      <div class="occasion-card selected" data-occasion="wedding" onclick="chooseOccasion('wedding')">
-        <div class="occasion-icon">💍</div>
-        <h3>حفل زفاف</h3>
-        <p>ليلة العمر، بداية حياة جديدة، وفرحة تجمع الأحباب.</p>
-        <span class="occasion-status">✓ تم الاختيار</span>
-      </div>
-
-      <div class="occasion-card" data-occasion="engagement" onclick="chooseOccasion('engagement')">
-        <div class="occasion-icon">🌹</div>
-        <h3>حفل خطوبة</h3>
-        <p>بداية حكاية جميلة وإعلان ارتباط يجمع القلوب.</p>
-        <span class="occasion-status">اختر هذه المناسبة</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DESIGNS -->
-
-<section class="section" id="designs" style="background:#fff">
-  <div class="container">
-
-    <div class="section-heading">
-      <span class="eyebrow">مجموعات وِصال</span>
-      <h2>تصاميم تليق بمناسبتكم</h2>
-      <p>اختر الأسلوب الذي يعبر عن ذوقك. يمكنك تغييره قبل إنشاء الرابط.</p>
-    </div>
-
-    <div class="design-grid">
-
-      <div class="design-card selected" data-theme="wine" onclick="chooseTheme('wine')">
-        <div class="design-art wine">
-          <div class="design-paper">
-            <small>WISAL</small>
-            <strong>دعوة خاصة</strong>
-            <span>أ & ل</span>
+        <div class="form-section">
+          <h3>01 — نوع المناسبة</h3>
+          <div class="type-switch">
+            <button class="type-option active" id="weddingBtn" onclick="setType('wedding')">حفل زفاف</button>
+            <button class="type-option" id="engagementBtn" onclick="setType('engagement')">حفل خطوبة</button>
           </div>
         </div>
-        <div class="design-info"><strong>عنابي ملكي</strong><p>فخامة ودفء</p></div>
-      </div>
 
-      <div class="design-card" data-theme="cream" onclick="chooseTheme('cream')">
-        <div class="design-art cream">
-          <div class="design-paper">
-            <small>WISAL</small>
-            <strong>دعوة خاصة</strong>
-            <span>أ & ل</span>
+        <div class="form-section">
+          <h3>02 — أسماء أصحاب المناسبة</h3>
+          <div class="field">
+            <label id="firstLabel">اسم العريس</label>
+            <input id="groom" placeholder="الاسم الأول">
+          </div>
+          <div class="field-grid">
+            <div class="field">
+              <label>اسم عائلة العريس</label>
+              <input id="groomFamily" placeholder="اسم العائلة">
+            </div>
+            <div class="field">
+              <label>اسم والد العريس <span class="optional">اختياري</span></label>
+              <input id="groomFather" placeholder="اسم الوالد">
+            </div>
+          </div>
+          <div class="field">
+            <label id="secondLabel">اسم العروس</label>
+            <input id="bride" placeholder="الاسم الأول">
+          </div>
+          <div class="field-grid">
+            <div class="field">
+              <label>اسم عائلة العروس</label>
+              <input id="brideFamily" placeholder="اسم العائلة">
+            </div>
+            <div class="field">
+              <label>اسم والد العروس <span class="optional">اختياري</span></label>
+              <input id="brideFather" placeholder="اسم الوالد">
+            </div>
           </div>
         </div>
-        <div class="design-info"><strong>عاجي وذهبي</strong><p>أناقة كلاسيكية</p></div>
-      </div>
 
-      <div class="design-card" data-theme="rose" onclick="chooseTheme('rose')">
-        <div class="design-art rose">
-          <div class="design-paper">
-            <small>WISAL</small>
-            <strong>دعوة خاصة</strong>
-            <span>أ & ل</span>
+        <div class="form-section">
+          <h3>03 — موعد ومكان المناسبة</h3>
+          <div class="field">
+            <label>تاريخ ووقت الحفل</label>
+            <input type="datetime-local" id="date">
+          </div>
+          <div class="field">
+            <label>اسم القاعة أو المكان</label>
+            <input id="place" placeholder="مثلاً: قاعة ...">
+          </div>
+          <div class="field">
+            <label>رابط الموقع على الخريطة <span class="optional">اختياري</span></label>
+            <input id="map" type="url" placeholder="https://maps.google.com/...">
           </div>
         </div>
-        <div class="design-info"><strong>وردي رومانسي</strong><p>نعومة ورقة</p></div>
-      </div>
 
-      <div class="design-card" data-theme="navy" onclick="chooseTheme('navy')">
-        <div class="design-art navy">
-          <div class="design-paper">
-            <small>WISAL</small>
-            <strong>دعوة خاصة</strong>
-            <span>أ & ل</span>
+        <div class="form-section">
+          <h3>04 — رسالة الدعوة</h3>
+          <div class="field">
+            <label>نص الدعوة <span class="optional">اختياري</span></label>
+            <textarea id="message" placeholder="بكل الحب والفرح، يسعدنا دعوتكم لمشاركتنا هذه المناسبة..."></textarea>
+          </div>
+          <div class="field">
+            <label>ملاحظة خاصة للضيوف <span class="optional">اختياري</span></label>
+            <textarea id="note" placeholder="مثلاً: نرجو الحضور قبل الموعد بنصف ساعة..."></textarea>
+            <div class="note-hint">لن تظهر هذه الخانة في الدعوة إذا تركتها فارغة.</div>
           </div>
         </div>
-        <div class="design-info"><strong>كحلي ملكي</strong><p>طابع ملكي</p></div>
-      </div>
 
-      <div class="design-card" data-theme="green" onclick="chooseTheme('green')">
-        <div class="design-art green">
-          <div class="design-paper">
-            <small>WISAL</small>
-            <strong>دعوة خاصة</strong>
-            <span>أ & ل</span>
+        <div class="form-section">
+          <h3>05 — تخصيص بطاقة الضيف</h3>
+          <div class="field">
+            <label>اسم الضيف</label>
+            <input id="guest" placeholder="مثلاً: الأستاذ أحمد وعائلته">
+          </div>
+          <div class="field">
+            <label>رقم واتساب لتأكيد الحضور</label>
+            <input id="whatsapp" type="tel" placeholder="مثلاً: 9639XXXXXXXX">
+            <div class="note-hint">أدخل الرقم مع رمز الدولة، من دون علامة +.</div>
           </div>
         </div>
-        <div class="design-info"><strong>أخضر زمردي</strong><p>طبيعة وفخامة</p></div>
-      </div>
 
-      <div class="design-card" data-theme="lavender" onclick="chooseTheme('lavender')">
-        <div class="design-art lavender">
-          <div class="design-paper">
-            <small>WISAL</small>
-            <strong>دعوة خاصة</strong>
-            <span>أ & ل</span>
-          </div>
+        <div style="margin-top:25px">
+          <button class="dark-btn" style="width:100%" onclick="createLink()">إنشاء رابط الدعوة الشخصية</button>
+          <p class="note-hint" style="text-align:center">يمكنك نسخ الرابط وإرساله للضيف مباشرة.</p>
         </div>
-        <div class="design-info"><strong>لافندر</strong><p>رقة عصرية</p></div>
+        <div id="linkResult" class="hidden" style="margin-top:20px;padding:15px;background:#eae5d9">
+          <strong style="font-size:12px">تم إنشاء رابط الدعوة</strong>
+          <input id="generatedLink" readonly style="width:100%;margin:12px 0;padding:10px;border:1px solid #d5cbb8;background:white;font-size:10px;direction:ltr">
+          <button class="primary-btn" style="width:100%" onclick="copyLink()">نسخ الرابط</button>
+          <button class="outline-btn" style="width:100%;margin-top:8px" onclick="openGenerated()">معاينة دعوة الضيف</button>
+        </div>
       </div>
 
+      <div class="preview-wrap">
+        <div class="preview-label">LIVE PREVIEW — معاينة مباشرة</div>
+        <div class="invite-card" id="preview">
+          <div class="card-top">YOU ARE CORDIALLY INVITED</div>
+          <div class="card-monogram" id="monogram">W</div>
+          <div class="card-intro" id="previewIntro">بكل الحب والسرور ندعوكم</div>
+          <div class="card-names">
+            <span id="names">العريس</span>
+            <div class="card-and">&</div>
+            <span id="brideLine">العروس</span>
+          </div>
+          <div class="card-rule"></div>
+          <div class="card-message" id="msg">لحضور ومشاركتنا أجمل لحظات العمر</div>
+          <div class="card-date" id="dateView">موعد الحفل</div>
+          <div class="card-place" id="placeView">مكان الحفل</div>
+        </div>
+        <div class="preview-actions">
+          <button class="outline-btn" onclick="previewGuest()">معاينة تجربة الضيف</button>
+          <button class="outline-btn" onclick="resetForm()">إعادة ضبط</button>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- HOW -->
-
-<section class="section" id="how">
-  <div class="container">
-    <div class="section-heading">
-      <span class="eyebrow">بكل بساطة</span>
-      <h2>كيف تعمل وِصال؟</h2>
-      <p>من اختيار المناسبة إلى إرسال الدعوة، خطوات واضحة وسهلة.</p>
+  <section class="features">
+    <div class="section-head">
+      <small>THE WISAL EXPERIENCE</small>
+      <h2>كل تفصيل له معنى</h2>
     </div>
-
-    <div class="steps">
-      <div class="step"><div class="step-number">01</div><h3>اختر المناسبة</h3><p>خطوبة أو زفاف، وحدد التصميم الذي يناسب ذوقك.</p></div>
-      <div class="step"><div class="step-number">02</div><h3>أضف التفاصيل</h3><p>الأسماء والتاريخ والمكان ورسالة الدعوة.</p></div>
-      <div class="step"><div class="step-number">03</div><h3>خصص الضيوف</h3><p>أنشئ رابطاً مستقلاً يحمل اسم كل ضيف.</p></div>
-      <div class="step"><div class="step-number">04</div><h3>شارك فرحتك</h3><p>انسخ الرابط وأرسله إلى أحبابك.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURES -->
-
-<section class="section features" id="features">
-  <div class="container">
-    <div class="section-heading">
-      <span class="eyebrow">تجربة متكاملة</span>
-      <h2>أكثر من مجرد بطاقة دعوة</h2>
-      <p>نصمم وِصال لتكون مساحة تجمع تفاصيل مناسبتكم في مكان واحد.</p>
-    </div>
-
     <div class="feature-grid">
-      <div class="feature"><span>✉️</span><h3>بطاقة شخصية</h3><p>اسم الضيف يظهر على بطاقة افتتاحية خاصة.</p></div>
-      <div class="feature"><span>💌</span><h3>ظرف تفاعلي</h3><p>يفتح الضيف الدعوة بلمسة على ختم الحروف.</p></div>
-      <div class="feature"><span>🎨</span><h3>قوالب متعددة</h3><p>مجموعة ألوان وتصاميم قابلة للاختيار.</p></div>
-      <div class="feature"><span>📅</span><h3>تفاصيل المناسبة</h3><p>التاريخ والوقت والمكان والرسالة.</p></div>
-      <div class="feature"><span>📱</span><h3>مشاركة سهلة</h3><p>رابط يمكن إرساله عبر واتساب أو أي تطبيق.</p></div>
-      <div class="feature"><span>🎵</span><h3>وسائط إضافية</h3><p>قابلية إضافة الصور والموسيقى بعد ربط التخزين.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- BUILDER -->
-
-<section class="section builder-wrap" id="builder">
-  <div class="container">
-
-    <div class="section-heading">
-      <span class="eyebrow">اصنع لحظتك</span>
-      <h2>صمم دعوتك الآن</h2>
-      <p>املأ التفاصيل وشاهد معاينة فورية قبل إنشاء رابط الدعوة.</p>
-    </div>
-
-    <div class="builder">
-
-      <div class="builder-form">
-
-        <h3>تفاصيل المناسبة</h3>
-
-        <div class="form-section">نوع المناسبة</div>
-        <div class="field">
-          <select id="eventType" onchange="changeOccasionFromForm()">
-            <option value="wedding">حفل زفاف</option>
-            <option value="engagement">حفل خطوبة</option>
-          </select>
-        </div>
-
-        <div class="form-section">بيانات الطرف الأول</div>
-        <div class="two-col">
-          <div class="field"><label id="person1Label">اسم العريس</label><input id="person1" placeholder="الاسم"></div>
-          <div class="field"><label>اسم العائلة</label><input id="family1" placeholder="العائلة"></div>
-        </div>
-        <div class="field"><label>اسم الوالد</label><input id="father1" placeholder="اسم الوالد"></div>
-
-        <div class="form-section">بيانات الطرف الثاني</div>
-        <div class="two-col">
-          <div class="field"><label id="person2Label">اسم العروس</label><input id="person2" placeholder="الاسم"></div>
-          <div class="field"><label>اسم العائلة</label><input id="family2" placeholder="العائلة"></div>
-        </div>
-        <div class="field"><label>اسم الوالد</label><input id="father2" placeholder="اسم الوالد"></div>
-
-        <div class="form-section">موعد ومكان المناسبة</div>
-        <div class="two-col">
-          <div class="field"><label>التاريخ</label><input type="date" id="eventDate"></div>
-          <div class="field"><label>الوقت</label><input type="time" id="eventTime"></div>
-        </div>
-        <div class="field"><label>المكان أو القاعة</label><input id="eventPlace" placeholder="اسم القاعة"></div>
-        <div class="field"><label>رابط موقع القاعة (اختياري)</label><input id="mapLink" type="url" placeholder="https://maps.google.com/..."></div>
-
-        <div class="form-section">نص الدعوة</div>
-        <div class="field"><label>رسالة الدعوة</label><textarea id="eventMessage"></textarea></div>
-
-        <div class="form-section">التصميم</div>
-        <div class="field">
-          <select id="eventTheme" onchange="changeThemeFromForm()">
-            <option value="wine">عنابي ملكي</option>
-            <option value="cream">عاجي وذهبي</option>
-            <option value="rose">وردي رومانسي</option>
-            <option value="navy">كحلي ملكي</option>
-            <option value="green">أخضر زمردي</option>
-            <option value="lavender">لافندر</option>
-          </select>
-        </div>
-
-        <div class="form-section">اسم الضيف</div>
-        <div class="field">
-          <label>اسم الشخص أو العائلة المدعوة</label>
-          <input id="guestName" placeholder="مثلاً: السيد محمد وعائلته">
-        </div>
-
-        <div class="form-section">رقم واتساب لتأكيد الحضور</div>
-        <div class="field">
-          <label>رقم الهاتف مع رمز الدولة دون + (اختياري)</label>
-          <input id="whatsapp" inputmode="numeric" placeholder="9639XXXXXXXX">
-          <p class="hint">يظهر زر تأكيد الحضور في الدعوة إذا أدخلت الرقم.</p>
-        </div>
-
-        <button class="btn btn-primary btn-block" onclick="generateInvitation()">إنشاء رابط الدعوة</button>
-
-        <div class="link-result" id="linkResult">
-          <strong>رابط الدعوة جاهز</strong>
-          <p id="linkOutput"></p>
-          <button class="btn btn-primary btn-block" onclick="copyInvitation()">نسخ الرابط</button>
-          <button class="btn btn-light btn-block" onclick="openGeneratedInvitation()" style="margin-top:8px">معاينة الدعوة</button>
-        </div>
-
-        <p class="hint">
-          هذه نسخة تجريبية تعمل دون قاعدة بيانات. بيانات الدعوة تحفظ داخل الرابط نفسه.
-        </p>
-
+      <div class="feature">
+        <div class="num">01</div>
+        <h3>دعوة شخصية</h3>
+        <p>اسم ضيفك يظهر على بطاقة الاستقبال الخاصة به.</p>
       </div>
-
-      <aside class="preview-box">
-        <h3>معاينة مباشرة</h3>
-        <div class="preview-cover" id="livePreview">
-          <small>W I S A L</small>
-          <p id="previewOccasion">دعوة زفاف</p>
-          <h4 id="previewNames">اسم العريس & اسم العروس</h4>
-          <div class="monogram" id="previewInitials">أ & ل</div>
-          <p id="previewDate">بكل الحب ندعوكم لمشاركتنا فرحتنا</p>
-        </div>
-        <p class="hint">المعاينة تتغير تلقائياً أثناء إدخال البيانات.</p>
-      </aside>
-
+      <div class="feature">
+        <div class="num">02</div>
+        <h3>لحظة تفاعلية</h3>
+        <p>يفتح الضيف الدعوة ليكتشف تفاصيل مناسبتك.</p>
+      </div>
+      <div class="feature">
+        <div class="num">03</div>
+        <h3>الوقت والمكان</h3>
+        <p>عداد تنازلي وتفاصيل الحفل مع رابط الخريطة.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-</main>
+  <footer class="footer">
+    <strong>WISAL</strong>
+    لأن أجمل اللحظات تبدأ بدعوة
+  </footer>
+</div>
 
-<!-- INVITATION PAGE -->
+<!-- Guest view -->
+<div id="guestPage" class="guest-page hidden">
+  <section class="guest-cover" id="welcome">
+    <div class="cover-content">
+      <div class="cover-brand">WISAL</div>
+      <div class="cover-kicker">A PERSONAL INVITATION</div>
+      <div class="cover-guest" id="guestName">ضيفنا العزيز</div>
+      <div class="cover-desc">يسعدنا أن نشاركك لحظةً استثنائية</div>
+      <div class="cover-from" id="fromNames">لقد تلقيت دعوة من العروسين</div>
+      <button class="seal-button" onclick="openInvitation()" aria-label="افتح الدعوة">
+        <div class="seal" id="guestSeal">W & B</div>
+      </button>
+      <div class="open-hint">اضغط على الختم لفتح الدعوة</div>
+    </div>
+  </section>
 
-<main id="invitationPage" class="invitation-page">
-  <div class="invitation-shell">
-
-    <section class="invitation-cover" id="invitationCover">
-
-      <div class="invitation-top">
-        <div class="invitation-brand">W I S A L</div>
-        <div class="invitation-bismillah">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيم</div>
-        <div class="guest-label">دعوة خاصة إلى</div>
-        <div class="guest-name" id="guestDisplay">ضيفنا العزيز</div>
-        <div class="received" id="receivedDisplay"></div>
-      </div>
-
-      <div>
-        <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="افتح الدعوة">
-          <div class="env-back"></div>
-          <div class="env-paper"></div>
-          <div class="env-left"></div>
-          <div class="env-right"></div>
-          <div class="env-bottom"></div>
-          <div class="env-flap"></div>
-          <div class="seal" id="sealInitials">أ & ل</div>
-        </div>
-        <div class="invitation-hint">✦ اضغط على الختم لفتح دعوتك ✦</div>
-      </div>
-
-      <div class="invitation-footer" id="coverFooter">فرحتنا تكتمل بحضوركم</div>
-
+  <main class="guest-invitation" id="invitation">
+    <section class="invite-hero">
+      <div class="eyebrow" id="guestEventLabel">THE WEDDING CELEBRATION</div>
+      <h1>
+        <span id="guestGroom">العريس</span>
+        <div class="amp">&</div>
+        <span id="guestBride">العروس</span>
+      </h1>
+      <div class="subtitle" id="guestSubtitle">بداية حكاية جديدة</div>
     </section>
 
-    <section class="invitation-inside" id="invitationInside">
-      <div class="invitation-brand">W I S A L</div>
-      <div style="font-size:25px;color:#b18c55;margin:15px">✦ ❖ ✦</div>
-      <p id="insideOccasion">دعوة زفاف</p>
-      <h1 id="insideTitle">دعوة زفاف</h1>
-      <p>بكل الحب والسرور نتشرف بدعوتكم</p>
-      <div class="inside-couple" id="insideNames"></div>
-      <div class="inside-message" id="insideMessage"></div>
+    <section class="guest-section">
+      <div class="eyebrow">SAVE THE DATE</div>
+      <h2>ننتظر مشاركتكم فرحتنا</h2>
+      <p id="guestMessage">بكل الحب والسرور، ندعوكم لمشاركتنا هذه المناسبة السعيدة.</p>
 
-      <div class="details">
-        <div><strong>التاريخ:</strong> <span id="insideDate"></span></div>
-        <div><strong>الوقت:</strong> <span id="insideTime"></span></div>
-        <div><strong>المكان:</strong> <span id="insidePlace"></span></div>
-        <div id="mapRow" class="hidden"><a id="mapAnchor" target="_blank" rel="noopener">عرض موقع القاعة على الخريطة ↗</a></div>
+      <div class="countdown" id="timer">
+        <div class="time-unit"><strong id="days">00</strong><span>أيام</span></div>
+        <div class="time-unit"><strong id="hours">00</strong><span>ساعات</span></div>
+        <div class="time-unit"><strong id="minutes">00</strong><span>دقائق</span></div>
+        <div class="time-unit"><strong id="seconds">00</strong><span>ثوانٍ</span></div>
+      </div>
+      <div id="countdownStatus" style="font-size:11px;color:#8b806c;margin-top:15px">الوقت المتبقي حتى موعد الحفل</div>
+
+      <div class="card-rule"></div>
+
+      <div class="event-details">
+        <div class="detail">
+          <small>DATE & TIME</small>
+          <strong id="guestDate">يحدد لاحقاً</strong>
+        </div>
+        <div class="detail">
+          <small>LOCATION</small>
+          <strong id="guestPlace">يحدد لاحقاً</strong>
+        </div>
       </div>
 
-      <div id="insideGuest" style="color:#927344;font-family:Amiri,serif"></div>
+      <div id="guestNoteBox" class="note-box hidden">
+        <small>A NOTE FOR YOU</small>
+        <p id="guestNote"></p>
+      </div>
 
-      <a id="rsvpLink" class="rsvp hidden" target="_blank" rel="noopener">تأكيد الحضور عبر WhatsApp</a>
+      <div class="action-row">
+        <a id="mapButton" class="hidden" href="#" target="_blank" rel="noopener">عرض الموقع على الخريطة</a>
+        <button class="secondary" onclick="addToCalendar()">إضافة إلى التقويم</button>
+        <button class="secondary" onclick="shareInvitation()">مشاركة الدعوة</button>
+      </div>
 
-      <br>
-      <button class="back" onclick="returnToCover()">العودة إلى الغلاف</button>
-      <div style="color:#b18c55;margin:20px">✦</div>
+      <div class="rsvp-box" id="rsvp">
+        <h3>يسعدنا تأكيد حضوركم</h3>
+        <p>وجودكم يضيف لفرحتنا معنى أجمل.</p>
+        <div class="rsvp-buttons">
+          <button onclick="sendRSVP('yes')">بكل سرور، سأحضر</button>
+          <button onclick="sendRSVP('no')">أعتذر عن الحضور</button>
+        </div>
+      </div>
     </section>
 
-  </div>
-</main>
+    <footer class="guest-footer">WISAL</footer>
+  </main>
+</div>
 
-<footer>
-  <div class="container">
-    <div class="logo">وِصال</div>
-    <p>WISAL — لكل فرحة حكاية</p>
-    <p>دعوات إلكترونية تصنع لحظات لا تُنسى.</p>
-    <p>© 2026 WISAL. جميع الحقوق محفوظة.</p>
-  </div>
-</footer>
+<div class="toast" id="toast"></div>
 
 <script>
-"use strict";
-
-/* =========================
-   إعدادات وِصال
-========================= */
-
 const $ = id => document.getElementById(id);
+let eventType = "wedding";
+let currentData = null;
+let countdownInterval = null;
 
-const THEME_NAMES = {
-  wine:"عنابي ملكي",
-  cream:"عاجي وذهبي",
-  rose:"وردي رومانسي",
-  navy:"كحلي ملكي",
-  green:"أخضر زمردي",
-  lavender:"لافندر"
-};
+const fieldIds = [
+  "groom","groomFamily","groomFather",
+  "bride","brideFamily","brideFather",
+  "date","place","map","message","note",
+  "guest","whatsapp"
+];
 
-const DEFAULT_MESSAGES = {
-  wedding:"بكل الحب والفرح، نتشرف بدعوتكم لمشاركتنا ليلة العمر. حضوركم يزيد فرحتنا اكتمالاً.",
-  engagement:"بكل الحب والسرور، يسعدنا دعوتكم لمشاركتنا فرحة خطوبتنا وبداية حكاية جديدة. وجودكم يزيد فرحتنا جمالاً."
-};
+function setType(type){
+  eventType = type;
+  $("weddingBtn").classList.toggle("active",type==="wedding");
+  $("engagementBtn").classList.toggle("active",type==="engagement");
 
-let selectedOccasion = "wedding";
-let selectedTheme = "wine";
-let generatedLink = "";
-let generatedInvitation = null;
-
-
-/* =========================
-   تغيير المناسبة
-========================= */
-
-function chooseOccasion(type){
-
-  if(!["wedding","engagement"].includes(type)) return;
-
-  selectedOccasion = type;
-
-  $("eventType").value = type;
-
-  document.querySelectorAll(".occasion-card").forEach(card=>{
-    const active = card.dataset.occasion === type;
-    card.classList.toggle("selected",active);
-    card.querySelector(".occasion-status").textContent =
-      active ? "✓ تم الاختيار" : "اختر هذه المناسبة";
-  });
-
-  updateOccasionLabels();
-  updateLivePreview();
+  $("firstLabel").textContent = type==="wedding" ? "اسم العريس" : "اسم الخاطب";
+  $("secondLabel").textContent = type==="wedding" ? "اسم العروس" : "اسم المخطوبة";
+  $("previewIntro").textContent = type==="wedding"
+    ? "بكل الحب والسرور ندعوكم"
+    : "بكل الحب والسرور ندعوكم لمشاركتنا";
+  $("guestEventLabel").textContent = type==="wedding"
+    ? "THE WEDDING CELEBRATION"
+    : "THE ENGAGEMENT CELEBRATION";
+  $("guestSubtitle").textContent = type==="wedding"
+    ? "بداية حكاية جديدة"
+    : "فرحة بداية الطريق";
+  preview();
 }
 
-
-function changeOccasionFromForm(){
-  chooseOccasion($("eventType").value);
+function data(){
+  const obj = {type:eventType};
+  fieldIds.forEach(id => obj[id] = $(id).value.trim());
+  return obj;
 }
 
-
-function updateOccasionLabels(){
-
-  const engagement = selectedOccasion === "engagement";
-
-  $("person1Label").textContent =
-    engagement ? "اسم الخاطب" : "اسم العريس";
-
-  $("person2Label").textContent =
-    engagement ? "اسم المخطوبة" : "اسم العروس";
-
-  $("previewOccasion").textContent =
-    engagement ? "دعوة خطوبة" : "دعوة زفاف";
-
-  $("insideTitle").textContent =
-    engagement ? "دعوة خطوبة" : "دعوة زفاف";
-
-  $("insideOccasion").textContent =
-    engagement ? "بمناسبة الخطوبة" : "بمناسبة الزفاف";
-
-  if(!$("eventMessage").value.trim() ||
-     Object.values(DEFAULT_MESSAGES).includes($("eventMessage").value.trim())){
-    $("eventMessage").value =
-      DEFAULT_MESSAGES[selectedOccasion];
-  }
+function fullName(name,family){
+  return [name,family].filter(Boolean).join(" ");
 }
 
-
-/* =========================
-   تغيير التصميم
-========================= */
-
-function chooseTheme(theme){
-
-  if(!THEME_NAMES[theme]) return;
-
-  selectedTheme = theme;
-  $("eventTheme").value = theme;
-
-  document.querySelectorAll(".design-card").forEach(card=>{
-    card.classList.toggle("selected",card.dataset.theme === theme);
-  });
-
-  updateLivePreview();
+function formatDate(value){
+  if(!value) return "موعد الحفل";
+  const d = new Date(value);
+  if(isNaN(d)) return value;
+  return new Intl.DateTimeFormat("ar",{
+    weekday:"long",year:"numeric",month:"long",day:"numeric",
+    hour:"numeric",minute:"2-digit"
+  }).format(d);
 }
 
-
-function changeThemeFromForm(){
-  chooseTheme($("eventTheme").value);
+function preview(){
+  const d = data();
+  const groom = fullName(d.groom,d.groomFamily) || "العريس";
+  const bride = fullName(d.bride,d.brideFamily) || "العروس";
+  $("names").textContent = groom;
+  $("brideLine").textContent = bride;
+  $("msg").textContent = d.message || "لحضور ومشاركتنا أجمل لحظات العمر";
+  $("dateView").textContent = d.date ? formatDate(d.date) : "موعد الحفل";
+  $("placeView").textContent = d.place || "مكان الحفل";
+  $("monogram").textContent =
+    (d.groom ? d.groom.charAt(0) : "W") +
+    (d.bride ? " " + d.bride.charAt(0) : "");
 }
 
-
-function applyTheme(element,theme){
-
-  const colors = {
-    wine:["#633b49","#2d1c25","#f5e6c8"],
-    cream:["#eee3d0","#fffaf0","#826b49"],
-    rose:["#80515d","#492d37","#f9e6e6"],
-    navy:["#30495e","#172a3b","#eee0bd"],
-    green:["#405849","#24372c","#e8dfc4"],
-    lavender:["#65546f","#352b42","#f1e8fa"]
-  };
-
-  const c = colors[theme] || colors.wine;
-
-  element.style.background =
-    "linear-gradient(145deg,"+c[0]+","+c[1]+")";
-
-  element.style.color = c[2];
-}
-
-
-/* =========================
-   المعاينة المباشرة
-========================= */
-
-function getNames(){
-
-  const first = $("person1").value.trim();
-  const second = $("person2").value.trim();
-
-  return {
-    one:[first,$("family1").value.trim()].filter(Boolean).join(" "),
-    two:[second,$("family2").value.trim()].filter(Boolean).join(" ")
-  };
-}
-
-
-function initial(name){
-  return Array.from(String(name || "").trim())[0] || "؟";
-}
-
-
-function updateLivePreview(){
-
-  const names = getNames();
-
-  $("previewNames").textContent =
-    (names.one || "اسم الطرف الأول") +
-    " & " +
-    (names.two || "اسم الطرف الثاني");
-
-  $("previewInitials").textContent =
-    initial($("person1").value) +
-    " & " +
-    initial($("person2").value);
-
-  $("previewDate").textContent =
-    $("eventDate").value ||
-    (selectedOccasion === "wedding" ?
-      "فرحتنا تكتمل بحضوركم" :
-      "بداية حكاية جميلة");
-
-  applyTheme($("livePreview"),selectedTheme);
-}
-
-
-[
-  "person1","person2","family1","family2",
-  "eventDate","eventTime","eventPlace","eventMessage"
-].forEach(id=>{
-  $(id).addEventListener("input",updateLivePreview);
+fieldIds.forEach(id => {
+  $(id).addEventListener("input",preview);
+  $(id).addEventListener("change",preview);
 });
 
-
-/* =========================
-   الانتقال إلى المنشئ
-========================= */
-
-function goBuilder(){
-
-  $("builder").scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-  });
-
-}
-
-
-/* =========================
-   جمع البيانات
-========================= */
-
-function collectData(){
-
-  return {
-    occasion:selectedOccasion,
-    theme:selectedTheme,
-    person1:$("person1").value.trim(),
-    family1:$("family1").value.trim(),
-    father1:$("father1").value.trim(),
-    person2:$("person2").value.trim(),
-    family2:$("family2").value.trim(),
-    father2:$("father2").value.trim(),
-    date:$("eventDate").value,
-    time:$("eventTime").value,
-    place:$("eventPlace").value.trim(),
-    mapLink:$("mapLink").value.trim(),
-    message:$("eventMessage").value.trim(),
-    whatsapp:$("whatsapp").value.replace(/[^\d]/g,"")
-  };
-
-}
-
-
-/* =========================
-   الترميز الآمن للنص العربي
-========================= */
-
-function encodeData(data){
-
-  const bytes = new TextEncoder().encode(JSON.stringify(data));
-
+function enc(obj){
+  const bytes = new TextEncoder().encode(JSON.stringify(obj));
   let binary = "";
-
-  bytes.forEach(byte=>{
-    binary += String.fromCharCode(byte);
-  });
-
-  return btoa(binary);
+  bytes.forEach(b => binary += String.fromCharCode(b));
+  return btoa(binary)
+    .replace(/\+/g,"-")
+    .replace(/\//g,"_")
+    .replace(/=+$/,"");
 }
 
-
-function decodeData(encoded){
-
-  const binary = atob(encoded);
-
-  const bytes = Uint8Array.from(
-    binary,
-    char=>char.charCodeAt(0)
-  );
-
+function dec(str){
+  let base = str.replace(/-/g,"+").replace(/_/g,"/");
+  while(base.length%4) base += "=";
+  const binary = atob(base);
+  const bytes = Uint8Array.from(binary,c=>c.charCodeAt(0));
   return JSON.parse(new TextDecoder().decode(bytes));
 }
 
-
-/* =========================
-   إنشاء الرابط
-========================= */
-
-function generateInvitation(){
-
-  const data = collectData();
-
-  if(!data.person1 || !data.person2){
-    alert("يرجى إدخال اسم الطرف الأول والطرف الثاني.");
+function createLink(){
+  const d = data();
+  if(!d.groom || !d.bride){
+    showToast("يرجى إدخال اسمي العروسين أولاً");
+    return;
+  }
+  if(!d.date){
+    showToast("يرجى تحديد موعد الحفل");
     return;
   }
 
-  if(data.mapLink){
-    try{
-      const mapURL = new URL(data.mapLink);
-      if(!["https:","http:"].includes(mapURL.protocol)){
-        throw new Error("Invalid map URL");
-      }
-    }catch(error){
-      alert("يرجى إدخال رابط صحيح لموقع القاعة.");
+  const url = new URL(location.href);
+  url.search = "";
+  url.hash = "";
+  url.searchParams.set("invitation",enc(d));
+
+  $("generatedLink").value = url.toString();
+  $("linkResult").classList.remove("hidden");
+  currentData = d;
+  showToast("تم إنشاء رابط الدعوة");
+}
+
+async function copyLink(){
+  const text = $("generatedLink").value;
+  try{
+    await navigator.clipboard.writeText(text);
+    showToast("تم نسخ الرابط");
+  }catch(e){
+    $("generatedLink").select();
+    document.execCommand("copy");
+    showToast("تم نسخ الرابط");
+  }
+}
+
+function openGenerated(){
+  const url = $("generatedLink").value;
+  window.open(url,"_blank");
+}
+
+function previewGuest(){
+  const d = data();
+  if(!d.groom || !d.bride){
+    showToast("أدخل اسمي العروسين لمعاينة الدعوة");
+    return;
+  }
+  currentData = d;
+  $("editor").classList.add("hidden");
+  $("guestPage").classList.remove("hidden");
+  renderGuest(d);
+  window.scrollTo(0,0);
+}
+
+function resetForm(){
+  if(!confirm("هل تريد مسح جميع البيانات؟")) return;
+  fieldIds.forEach(id => $(id).value="");
+  setType("wedding");
+  $("linkResult").classList.add("hidden");
+  preview();
+}
+
+function renderGuest(d){
+  currentData = d;
+  const groom = fullName(d.groom,d.groomFamily);
+  const bride = fullName(d.bride,d.brideFamily);
+
+  $("guestName").textContent = d.guest || "ضيفنا العزيز";
+  $("fromNames").textContent = "لقد تلقيت دعوة من " + groom + " و " + bride;
+  $("guestSeal").textContent =
+    (d.groom ? d.groom.charAt(0) : "W") +
+    " & " +
+    (d.bride ? d.bride.charAt(0) : "B");
+
+  $("guestGroom").textContent = groom;
+  $("guestBride").textContent = bride;
+  $("guestMessage").textContent = d.message ||
+    "بكل الحب والسرور، ندعوكم لمشاركتنا هذه المناسبة السعيدة.";
+  $("guestDate").textContent = formatDate(d.date);
+  $("guestPlace").textContent = d.place || "سيتم تحديد المكان";
+  $("guestNoteBox").classList.toggle("hidden",!d.note);
+  $("guestNote").textContent = d.note || "";
+
+  if(d.map){
+    $("mapButton").href = d.map;
+    $("mapButton").classList.remove("hidden");
+  }else{
+    $("mapButton").classList.add("hidden");
+  }
+
+  startCountdown(d.date);
+}
+
+function openInvitation(){
+  $("invitation").classList.add("visible");
+  setTimeout(()=>{
+    $("invitation").scrollIntoView({behavior:"smooth"});
+  },100);
+}
+
+function startCountdown(dateValue){
+  if(countdownInterval) clearInterval(countdownInterval);
+  const target = new Date(dateValue).getTime();
+
+  function update(){
+    if(!dateValue || isNaN(target)){
+      $("countdownStatus").textContent = "لم يتم تحديد موعد الحفل";
       return;
     }
-  }
+    const diff = target - Date.now();
 
-  const guest = $("guestName").value.trim();
-
-  try{
-
-    const encoded = encodeData(data);
-
-    const url = new URL(location.href);
-
-    url.search = "";
-    url.hash = "";
-
-    url.searchParams.set("invitation",encoded);
-
-    if(guest){
-      url.searchParams.set("guest",guest);
+    if(diff <= 0){
+      $("days").textContent = "00";
+      $("hours").textContent = "00";
+      $("minutes").textContent = "00";
+      $("seconds").textContent = "00";
+      $("countdownStatus").textContent =
+        diff > -86400000 ? "اليوم هو يوم فرحتنا!" : "نتمنى أن تكونوا قد قضيتم وقتاً جميلاً معنا";
+      if(countdownInterval) clearInterval(countdownInterval);
+      return;
     }
 
-    generatedLink = url.toString();
-    generatedInvitation = data;
+    const days = Math.floor(diff/86400000);
+    const hours = Math.floor((diff%86400000)/3600000);
+    const minutes = Math.floor((diff%3600000)/60000);
+    const seconds = Math.floor((diff%60000)/1000);
 
-    $("linkOutput").textContent = generatedLink;
-    $("linkResult").style.display = "block";
-
-    $("linkResult").scrollIntoView({
-      behavior:"smooth",
-      block:"nearest"
-    });
-
-  }catch(error){
-    console.error(error);
-    alert("حدث خطأ أثناء إنشاء الرابط. حاول مجدداً.");
+    $("days").textContent = String(days).padStart(2,"0");
+    $("hours").textContent = String(hours).padStart(2,"0");
+    $("minutes").textContent = String(minutes).padStart(2,"0");
+    $("seconds").textContent = String(seconds).padStart(2,"0");
+    $("countdownStatus").textContent = "الوقت المتبقي حتى موعد الحفل";
   }
-
+  update();
+  countdownInterval = setInterval(update,1000);
 }
 
+function sendRSVP(answer){
+  if(!currentData || !currentData.whatsapp){
+    showToast("لم يتم إضافة رقم واتساب لتأكيد الحضور");
+    return;
+  }
+  const status = answer==="yes" ? "يسعدني تأكيد حضوري" : "أعتذر عن عدم تمكني من الحضور";
+  const guest = currentData.guest || "أحد الضيوف";
+  const groom = fullName(currentData.groom,currentData.groomFamily);
+  const bride = fullName(currentData.bride,currentData.brideFamily);
+  const text = `مرحباً، أنا ${guest}.\n${status} لمناسبة ${groom} و${bride}.`;
+  const phone = currentData.whatsapp.replace(/\D/g,"");
+  window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(text),"_blank");
+}
 
-/* =========================
-   نسخ الرابط
-========================= */
+function addToCalendar(){
+  if(!currentData || !currentData.date){
+    showToast("لا يوجد موعد لإضافته");
+    return;
+  }
+  const start = new Date(currentData.date);
+  const end = new Date(start.getTime()+3*60*60*1000);
+  const toICS = date => date.toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,"");
+  const title = currentData.type==="engagement" ? "حفل خطوبة" : "حفل زفاف";
+  const groom = fullName(currentData.groom,currentData.groomFamily);
+  const bride = fullName(currentData.bride,currentData.brideFamily);
+  const content = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//WISAL//Invitation//AR",
+    "BEGIN:VEVENT",
+    "DTSTART:"+toICS(start),
+    "DTEND:"+toICS(end),
+    "SUMMARY:"+title+" - "+groom+" & "+bride,
+    "LOCATION:"+(currentData.place||""),
+    "DESCRIPTION:"+(currentData.message||""),
+    "END:VEVENT",
+    "END:VCALENDAR"
+  ].join("\r\n");
 
-async function copyInvitation(){
+  const blob = new Blob([content],{type:"text/calendar;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "WISAL-invitation.ics";
+  a.click();
+  URL.revokeObjectURL(url);
+}
 
-  if(!generatedLink) return;
-
+async function shareInvitation(){
+  const url = location.href;
   try{
-
-    await navigator.clipboard.writeText(generatedLink);
-
-    alert("تم نسخ رابط الدعوة.");
-
-  }catch(error){
-
-    const input = document.createElement("textarea");
-    input.value = generatedLink;
-    document.body.appendChild(input);
-    input.select();
-
-    try{
-      document.execCommand("copy");
-      alert("تم نسخ الرابط.");
-    }catch(copyError){
-      prompt("انسخ الرابط يدوياً:",generatedLink);
+    if(navigator.share){
+      await navigator.share({title:"دعوة من وِصال",text:"يسعدنا مشاركتك هذه المناسبة",url});
+    }else{
+      await navigator.clipboard.writeText(url);
+      showToast("تم نسخ رابط الدعوة");
     }
-
-    input.remove();
-
-  }
-
+  }catch(e){}
 }
 
-
-/* =========================
-   معاينة الرابط المنشأ
-========================= */
-
-function openGeneratedInvitation(){
-
-  if(!generatedLink) return;
-
-  window.open(generatedLink,"_blank","noopener");
-
+function showToast(message){
+  const t = $("toast");
+  t.textContent = message;
+  t.classList.add("show");
+  setTimeout(()=>t.classList.remove("show"),2500);
 }
 
-
-/* =========================
-   صفحة الضيف
-========================= */
-
-function displayInvitation(data,guest){
-
-  if(!data || !data.person1 || !data.person2){
-    throw new Error("Invalid invitation");
-  }
-
-  if(!["wedding","engagement"].includes(data.occasion)){
-    data.occasion = "wedding";
-  }
-
-  if(!THEME_NAMES[data.theme]){
-    data.theme = "wine";
-  }
-
-  $("siteHeader").classList.add("hidden");
-  $("home").classList.add("hidden");
-  document.querySelector("footer").classList.add("hidden");
-
-  $("invitationPage").style.display = "flex";
-
-  const names = {
-    one:[data.person1,data.family1].filter(Boolean).join(" "),
-    two:[data.person2,data.family2].filter(Boolean).join(" ")
-  };
-
-  const occasionName =
-    data.occasion === "engagement" ? "الخطوبة" : "الزفاف";
-
-  const occasionTitle =
-    data.occasion === "engagement" ? "دعوة خطوبة" : "دعوة زفاف";
-
-  $("guestDisplay").textContent = guest || "ضيفنا العزيز";
-
-  $("receivedDisplay").textContent =
-    "لقد تلقيت دعوة من " + names.one + " و " + names.two;
-
-  $("sealInitials").textContent =
-    initial(data.person1) + " & " + initial(data.person2);
-
-  $("insideTitle").textContent = occasionTitle;
-  $("insideOccasion").textContent = "بمناسبة " + occasionName;
-
-  $("insideNames").textContent =
-    names.one + " ♥ " + names.two;
-
-  $("insideMessage").textContent =
-    data.message || DEFAULT_MESSAGES[data.occasion];
-
-  $("insideDate").textContent =
-    formatDate(data.date);
-
-  $("insideTime").textContent =
-    data.time || "يحدد لاحقاً";
-
-  $("insidePlace").textContent =
-    data.place || "يحدد لاحقاً";
-
-  $("insideGuest").textContent =
-    guest ? "الدعوة موجهة إلى: " + guest : "";
-
-  applyTheme($("invitationCover"),data.theme);
-
-  const mapRow = $("mapRow");
-  mapRow.classList.add("hidden");
-
-  if(data.mapLink){
-    try{
-      const map = new URL(data.mapLink);
-      if(["https:","http:"].includes(map.protocol)){
-        $("mapAnchor").href = map.href;
-        mapRow.classList.remove("hidden");
-      }
-    }catch(error){}
-  }
-
-  const rsvp = $("rsvpLink");
-
-  if(data.whatsapp){
-
-    const message =
-      "مرحباً، أود تأكيد حضوري لمناسبة " +
-      occasionName + " الخاصة بـ " +
-      names.one + " و " + names.two;
-
-    rsvp.href =
-      "https://wa.me/" + data.whatsapp +
-      "?text=" + encodeURIComponent(message);
-
-    rsvp.classList.remove("hidden");
-
-  }else{
-    rsvp.classList.add("hidden");
-  }
-
-  document.title =
-    occasionTitle + " | " + names.one + " و " + names.two;
-
-}
-
-
-/* =========================
-   فتح الظرف
-========================= */
-
-function openEnvelope(){
-
-  const cover = $("invitationCover");
-
-  if(cover.classList.contains("opening")) return;
-
-  cover.classList.add("opening");
-
-  setTimeout(()=>{
-
-    cover.style.display = "none";
-    $("invitationInside").style.display = "block";
-
-    window.scrollTo({top:0,behavior:"smooth"});
-
-  },700);
-
-}
-
-
-function returnToCover(){
-
-  $("invitationInside").style.display = "none";
-  $("invitationCover").style.display = "flex";
-  $("invitationCover").classList.remove("opening");
-
-  window.scrollTo({top:0,behavior:"smooth"});
-
-}
-
-
-$("envelope").addEventListener("click",openEnvelope);
-
-$("envelope").addEventListener("keydown",event=>{
-  if(event.key === "Enter" || event.key === " "){
-    event.preventDefault();
-    openEnvelope();
-  }
-});
-
-
-/* =========================
-   تنسيق التاريخ
-========================= */
-
-function formatDate(value){
-
-  if(!value) return "يحدد لاحقاً";
-
-  const parts = value.split("-");
-
-  if(parts.length !== 3) return value;
-
-  const date = new Date(
-    Number(parts[0]),
-    Number(parts[1])-1,
-    Number(parts[2])
-  );
-
-  if(Number.isNaN(date.getTime())) return value;
-
-  return new Intl.DateTimeFormat("ar",{
-    year:"numeric",
-    month:"long",
-    day:"numeric"
-  }).format(date);
-
-}
-
-
-/* =========================
-   تحميل رابط الضيف
-========================= */
-
-(function(){
-
+function loadLink(){
   const params = new URLSearchParams(location.search);
-
   const encoded = params.get("invitation");
-
   if(!encoded) return;
 
   try{
+    const d = dec(encoded);
+    if(!d || !d.groom || !d.bride || !d.date) throw new Error("Invalid invitation");
 
-    const data = decodeData(encoded);
-
-    const guest = params.get("guest") || "";
-
-    displayInvitation(data,guest);
-
-  }catch(error){
-
-    console.error("Invitation error:",error);
-
-    $("siteHeader").classList.add("hidden");
-    $("home").classList.add("hidden");
-    document.querySelector("footer").classList.add("hidden");
-
-    $("invitationPage").style.display = "flex";
-
-    $("invitationPage").innerHTML =
-      '<div style="background:#fffaf0;padding:35px;text-align:center;border:1px solid #c4a36a;color:#57483b;max-width:400px">' +
-      '<h2>تعذر فتح الدعوة</h2>' +
-      '<p>الرابط غير صحيح أو أن بيانات الدعوة غير مكتملة.</p>' +
-      '</div>';
-
+    $("editor").classList.add("hidden");
+    $("guestPage").classList.remove("hidden");
+    renderGuest(d);
+    document.title = "دعوة خاصة | WISAL";
+  }catch(e){
+    $("editor").classList.remove("hidden");
+    $("guestPage").classList.add("hidden");
+    showToast("رابط الدعوة غير صالح أو تالف");
   }
+}
 
-})();
-
-
-/* =========================
-   التهيئة الأولى
-========================= */
-
-$("eventMessage").value = DEFAULT_MESSAGES.wedding;
-
-updateOccasionLabels();
-updateLivePreview();
-
+loadLink();
+preview();
 </script>
-
 </body>
 </html>
